@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AmazingTeamTaskManager.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ff88072edec663a12215b50a513590c41a49963")]
 [assembly: System.Reflection.AssemblyProductAttribute("AmazingTeamTaskManager.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AmazingTeamTaskManager.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
