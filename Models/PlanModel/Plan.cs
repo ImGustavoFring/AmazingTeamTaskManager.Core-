@@ -1,18 +1,19 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
+using AmazingTeamTaskManager.Core.Models.NotificationModel;
+using AmazingTeamTaskManager.Core.Models.ProjectModel;
+using AmazingTeamTaskManager.Core.Models.TaskFromPlanModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using AmazingTeamTaskManager.Core.Models.TaskFromPlanModel;
-using AmazingTeamTaskManager.Core.Models.BaseModel;
 
 namespace AmazingTeamTaskManager.Core.Models.PlanModel
 {
-    public class Plan : BaseEntityWithName
+    public class Plan : BaseEntityWithData
     {
-        public List<PlanProject> Projects { get; set; }
-        public List<TaskFromPlanPlan> Tasks { get; set; }
+        public virtual List<Project> Projects { get; set; }
+        public virtual List<TaskFromPlan> TaskFromPlans { get; set; }
     }
 }

@@ -1,25 +1,23 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
+using AmazingTeamTaskManager.Core.Models.ProfleModel;
 using System;
 using System.Collections.Generic;
-using AmazingTeamTaskManager.Core.Models.ProfleModel;
-using AmazingTeamTaskManager.Core.Models.BaseModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AmazingTeamTaskManager.Core.Models.UserModel
 {
     public class User : BaseEntity
-    {
-        public UserRole RoleInSystem { get; set; } = UserRole.USER;
+    { 
         public string Login { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-
-        [BsonIgnoreIfNull]
-        public Profile Profile { get; set; }
-
+        public RoleInSystem RoleInSystem { get; set; } = RoleInSystem.USER;
+        public virtual Profile Profile { get; set; }
     }
 
-    public enum UserRole
+    public enum RoleInSystem
     {
         USER,
         ADMIN

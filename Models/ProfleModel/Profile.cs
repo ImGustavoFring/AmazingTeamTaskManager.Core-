@@ -1,20 +1,19 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
+using AmazingTeamTaskManager.Core.Models.UserModel;
 using System;
 using System.Collections.Generic;
-using AmazingTeamTaskManager.Core.Models.MemberModel;
-using AmazingTeamTaskManager.Core.Models.BaseModel;
+using System.Diagnostics.Contracts;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AmazingTeamTaskManager.Core.Models.ProfleModel
 {
     public class Profile : BaseEntityWithDescription
     {
+        public virtual User User{ get; set; }
+        public Guid UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        [BsonIgnore]
-        public string UserId { get; set; }
-
-        public List<Member> Members { get; set; }
     }
 }

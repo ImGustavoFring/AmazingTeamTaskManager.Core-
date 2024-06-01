@@ -1,39 +1,36 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
+using AmazingTeamTaskManager.Core.Models.MemberModel;
+using AmazingTeamTaskManager.Core.Models.NotificationModel;
+using AmazingTeamTaskManager.Core.Models.PlanModel;
 using System;
 using System.Collections.Generic;
-using AmazingTeamTaskManager.Core.Models.MemberModel;
-using AmazingTeamTaskManager.Core.Models.BaseModel;
+using System.Linq;
+using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AmazingTeamTaskManager.Core.Models.TaskFromPlanModel
 {
-    public class TaskFromPlan : BaseEntityWithName
+    public class TaskFromPlan : BaseEntityWithData
     {
-
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime? DeadLineStart { get; set; }
-
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime? DeadLineEnd { get; set; }
-
-        public TaskPriority Priority { get; set; } = TaskPriority.NORMAL;
-
-        public TaskStatus Status { get; set; } = TaskStatus.NEW;
-
-        public List<TaskFromPlanPlan> Plans { get; set; }
-        public List<MemberTaskFromPlan> Members { get; set; }
+        public DateTime? DeadLineStart { get; set; } = null;
+        public DateTime? DeadLineEnd { get; set; } = null;
+        public TaskFromPlanPriority Priority { get; set; } = TaskFromPlanPriority.MEDIUM;
+        public TaskFromPlanStatus Status { get; set; } = TaskFromPlanStatus.NEW;
+        public virtual List<Plan> Plans { get; set; }
+        public virtual List<Member> Members { get; set; }
     }
 
-    public enum TaskPriority
+    public enum TaskFromPlanPriority
     {
         VERY_LOW,
         LOW,
-        NORMAL,
+        MEDIUM,
         HIGH,
         VERY_HIGH
     }
 
-    public enum TaskStatus
+    public enum TaskFromPlanStatus
     {
         NEW,
         IN_PROGRESS,

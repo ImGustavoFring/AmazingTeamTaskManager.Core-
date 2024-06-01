@@ -1,28 +1,26 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
+using AmazingTeamTaskManager.Core.Models.ProfleModel;
+using AmazingTeamTaskManager.Core.Models.TaskFromPlanModel;
+using AmazingTeamTaskManager.Core.Models.TeamModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AmazingTeamTaskManager.Core.Models.BaseModel;
-
 
 namespace AmazingTeamTaskManager.Core.Models.MemberModel
 {
-    public class Member : IdentifiableEntity
+    public class Member : BaseEntity
     {
-        public MemberRole RoleOnTeam { get; set; } = MemberRole.WORKER;
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string ProfileId { get; set; }
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string TeamId { get; set; }
-        public List<MemberTaskFromPlan> Tasks { get; set; }
+        public Guid ProfileId { get; set; }
+        public Profile Profile { get; set; }
+        public Guid TeamId { get; set; }
+        public Team Team { get; set; }
+        public virtual List<TaskFromPlan> TaskFromPlans { get; set; }
+        public RoleOnTeam Role { get; set; } = RoleOnTeam.WORKER;
     }
 
-    public enum MemberRole
+    public enum RoleOnTeam
     {
         WORKER,
         MANAGER,
