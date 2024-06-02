@@ -5,7 +5,7 @@ using AmazingTeamTaskManager.Core.Infrastructure;
 using System;
 using System.Threading.Tasks;
 
-namespace AmazingTeamTaskManager.Core.Services
+namespace AmazingTeamTaskManager.Core.Services.UserServices
 {
     public class AuthService
     {

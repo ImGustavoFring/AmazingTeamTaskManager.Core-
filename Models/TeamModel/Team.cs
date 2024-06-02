@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using AmazingTeamTaskManager.Core.Models.BaseModel;
+using System.Text.Json.Serialization;
 
 namespace AmazingTeamTaskManager.Core.Models.TeamModel
 {
     public class Team : BaseEntityWithData
     {
+        [JsonIgnore]
         public virtual List<Member> Members { get; set; }
+        [JsonIgnore]
         public virtual List<Project> Projects { get; set; }
     }
 }

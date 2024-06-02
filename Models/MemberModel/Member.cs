@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AmazingTeamTaskManager.Core.Models.MemberModel
@@ -16,6 +17,7 @@ namespace AmazingTeamTaskManager.Core.Models.MemberModel
         public Profile Profile { get; set; }
         public Guid TeamId { get; set; }
         public Team Team { get; set; }
+        [JsonIgnore]
         public virtual List<TaskFromPlan> TaskFromPlans { get; set; }
         public RoleOnTeam Role { get; set; } = RoleOnTeam.WORKER;
     }
