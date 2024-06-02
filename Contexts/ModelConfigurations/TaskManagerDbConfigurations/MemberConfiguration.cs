@@ -11,8 +11,12 @@ namespace AmazingTeamTaskManager.Core.Contexts.ModelConfigurations.TaskManagerDb
             builder.HasKey(m => m.Id);
 
             builder.HasOne(m => m.Profile)
-                   .WithMany()
+                   .WithMany(p => p.Members)
                    .HasForeignKey(m => m.ProfileId);
+
+            builder.HasOne(m => m.Team)
+                 .WithMany(t => t.Members)
+                 .HasForeignKey(m => m.TeamId);
         }
     }
 }

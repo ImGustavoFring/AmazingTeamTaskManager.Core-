@@ -1,11 +1,11 @@
 ﻿using AmazingTeamTaskManager.Core.Models.ProfleModel;
 using AmazingTeamTaskManager.Core.Models.UserModel;
-using AmazingTeamTaskManager.Core.Repositories.UserDbRepositories;
 using AmazingTeamTaskManager.Core.Infrastructure;
 using System;
 using System.Threading.Tasks;
+using AmazingTeamTaskManager.Core.Repositories.TaskManagerRepositories;
 
-namespace AmazingTeamTaskManager.Core.Services.UserServices
+namespace AmazingTeamTaskManager.Core.Services
 {
     public class AuthService
     {

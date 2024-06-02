@@ -1,14 +1,11 @@
 ﻿using AmazingTeamTaskManager.Core.Models.TaskFromPlanModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace AmazingTeamTaskManager.Core.Models.NotificationModel
+namespace AmazingTeamTaskManager.Core.Models.AttachmentModel
 {
-    public class Notification
+    public class TaskAttachment
     {
         public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -17,5 +14,6 @@ namespace AmazingTeamTaskManager.Core.Models.NotificationModel
         public string Description { get; set; }
         [JsonIgnore]
         public virtual List<TaskFromPlan> Tasks { get; set; }
+        public List<string> FileIDs { get; set; }
     }
 }

@@ -16,6 +16,11 @@ namespace AmazingTeamTaskManager.Core.Contexts.ModelConfigurations.UserDbConfigu
             builder.HasOne(p => p.User)
                    .WithOne(u => u.Profile)
                    .HasForeignKey<Profile>(p => p.UserId);
+
+            builder.HasMany(p => p.Members)
+                   .WithOne(m => m.Profile)
+                   .HasForeignKey(m => m.ProfileId) 
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

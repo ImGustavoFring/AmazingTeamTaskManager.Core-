@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using AmazingTeamTaskManager.Core.Models.ProfleModel;
 
-namespace AmazingTeamTaskManager.Core.Contexts.ModelConfigurations
+namespace AmazingTeamTaskManager.Core.Contexts.ModelConfigurations.TaskManagerDbConfigurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

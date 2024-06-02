@@ -1,5 +1,4 @@
-﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
-using AmazingTeamTaskManager.Core.Models.ProfleModel;
+﻿using AmazingTeamTaskManager.Core.Models.ProfleModel;
 using AmazingTeamTaskManager.Core.Models.TaskFromPlanModel;
 using AmazingTeamTaskManager.Core.Models.TeamModel;
 using System;
@@ -11,14 +10,19 @@ using System.Threading.Tasks;
 
 namespace AmazingTeamTaskManager.Core.Models.MemberModel
 {
-    public class Member : BaseEntity
+    public class Member
     {
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; } = null;
         public Guid ProfileId { get; set; }
-        public Profile Profile { get; set; }
-        public Guid TeamId { get; set; }
-        public Team Team { get; set; }
         [JsonIgnore]
-        public virtual List<TaskFromPlan> TaskFromPlans { get; set; }
+        public virtual Profile Profile { get; set; }
+        public Guid TeamId { get; set; }
+        [JsonIgnore]
+        public virtual Team Team { get; set; }
+        [JsonIgnore]
+        public virtual List<TaskFromPlan> Tasks{ get; set; }
         public RoleOnTeam Role { get; set; } = RoleOnTeam.WORKER;
     }
 

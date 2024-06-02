@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AmazingTeamTaskManager.Core.Contexts.ModelConfigurations.TaskManagerDbConfigurations
 {
-    public class AttachmentConfiguration : IEntityTypeConfiguration<Attachment>
+    public class TaskAttachmentConfiguration : IEntityTypeConfiguration<TaskAttachment>
     {
-        public void Configure(EntityTypeBuilder<Attachment> builder)
+        public void Configure(EntityTypeBuilder<TaskAttachment> builder)
         {
             builder.HasKey(a => a.Id);
 

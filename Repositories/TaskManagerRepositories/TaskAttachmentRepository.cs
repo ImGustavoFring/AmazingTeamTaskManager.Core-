@@ -3,9 +3,9 @@ using AmazingTeamTaskManager.Core.Models.AttachmentModel;
 
 namespace AmazingTeamTaskManager.Core.Repositories.TaskManagerRepositories
 {
-    public class AttachmentRepository : Repository<TaskManagerDbContext, Attachment>
+    public class TaskAttachmentRepository : Repository<TaskManagerDbContext, TaskAttachment>
     {
-        public AttachmentRepository(TaskManagerDbContext context) : base(context)
+        public TaskAttachmentRepository(TaskManagerDbContext context) : base(context)
         {
         }
     }

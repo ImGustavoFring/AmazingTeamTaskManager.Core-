@@ -160,6 +160,22 @@ namespace AmazingTeamTaskManager.Core.Services.UserServices
             }
         }
 
+        public async Task ChangeUserRoleAsync(Guid id, RoleInSystem newRole)
+        {
+            try
+            {
+                await _userRepository.UpdateOneAsync(u => u.Id == id, user =>
+                {
+                    user.RoleInSystem = newRole;
+                    user.UpdatedAt = DateTime.UtcNow;
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to change user role: {ex.Message}", ex);
+            }
+        }
+
         private UserDTO ToUserDto(User user)
         {
             return new UserDTO

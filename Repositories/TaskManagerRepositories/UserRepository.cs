@@ -3,9 +3,9 @@ using AmazingTeamTaskManager.Core.Models.UserModel;
 
 namespace AmazingTeamTaskManager.Core.Repositories.UserDbRepositories
 {
-    public class UserRepository : Repository<UserDbContext, User>
+    public class UserRepository : Repository<TaskManagerDbContext, User>
     {
-        public UserRepository(UserDbContext context) : base(context)
+        public UserRepository(TaskManagerDbContext context) : base(context)
         {
         }
     }

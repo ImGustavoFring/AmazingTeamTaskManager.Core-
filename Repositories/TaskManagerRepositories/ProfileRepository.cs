@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazingTeamTaskManager.Core.Repositories.UserDbRepositories
+namespace AmazingTeamTaskManager.Core.Repositories.TaskManagerRepositories
 {
-    public class ProfileRepository : Repository<UserDbContext, Profile>
+    public class ProfileRepository : Repository<TaskManagerDbContext, Profile>
     {
-        public ProfileRepository(UserDbContext context) : base(context)
+        public ProfileRepository(TaskManagerDbContext context) : base(context)
         {
         }
     }

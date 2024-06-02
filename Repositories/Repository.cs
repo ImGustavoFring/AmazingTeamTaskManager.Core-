@@ -1,5 +1,4 @@
-﻿using AmazingTeamTaskManager.Core.Models.BaseModel;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace AmazingTeamTaskManager.Core.Repositories
 {
     public abstract class Repository<TContext, TEntity> : IRepository<TEntity>
         where TContext : DbContext
-        where TEntity : BaseEntity
+        where TEntity : class
     {
         protected readonly TContext _context;
 
